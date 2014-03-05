@@ -134,7 +134,7 @@ Additionally, the decomposition of a Bell expression can be stored in the YAML f
 .. todo:: Describe decompositions
 
 Oriented Bell Expression
--------------------~~~~~
+------------------------
 
 Oriented Bell expressions are described by a Bell expression along with a direction ``<=`` or ``>=``. Data about an oriented Bell expression is written using a ``BellExpression`` along with additional data in the special properties ``lower`` and ``upper``, describing knowledge about the ``expr >= bound`` and ``expr <= bound`` directions respectively.
 
