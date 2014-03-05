@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    intro
-   yaml/index
+   spec/latest/index
 
 Indices and tables
 ==================
