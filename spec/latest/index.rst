@@ -124,12 +124,17 @@ not-composite
 canonical
   The Bell expression is known to be ``minimal``,  ``not-io-lifted``, ``not-composite``. In addition, the scenario itself is ordered canonically, and the bound has been extracted from the coefficients, who themselves are written down using integers with GCD = 1.
 
-.. note:: To consider a Bell expression for inclusion in the ``Faacets`` database, the Bell expression should be ``canonical``, and in addition, the file should only provide upper bounds without lower bounds.
-
 .. todo:: Add link to our paper, to the Faacets command line tool documentation
 
+Decomposition
+~~~~~~~~~~~~~
+
+Additionally, the decomposition of a Bell expression can be stored in the YAML file to avoid expensive recomputations.
+
+.. todo:: Describe decompositions
+
 Oriented Bell Expression
--------------------
+-------------------~~~~~
 
 Oriented Bell expressions are described by a Bell expression along with a direction ``<=`` or ``>=``. Data about an oriented Bell expression is written using a ``BellExpression`` along with additional data in the special properties ``lower`` and ``upper``, describing knowledge about the ``expr >= bound`` and ``expr <= bound`` directions respectively.
 
@@ -152,3 +157,13 @@ facetOf
 keywords
   Keywords can be associated to an oriented Bell expression. For now, we do not have reserved keywords, nor
   do we compute keywords automatically for *oriented* expressions.
+
+Canonical Bell Expression
+-------------------------
+
+To consider a Bell expression for inclusion in the ``Faacets`` database, the Bell expression should be ``canonical`` (see the this keyword description). In addition, the file should not provide lower bounds, as only upper bounds are allowed.
+
+The canonical objects are stored in the ``canonical`` folder, have only integer file names starting from ``0``.  For Bell expressions stored in the ``canonical`` folder, a single additional property ``oppositeIndex`` can be required, giving the index the canonical form of the opposite Bell expression if it is also present in the database. If the canonical form of the opposite Bell expression is not present in the database, the property is omitted.
+
+.. todo:: add links
+ 
