@@ -165,5 +165,6 @@ To consider a Bell expression for inclusion in the ``Faacets`` database, the Bel
 
 The canonical objects are stored in the ``canonical`` folder, have only integer file names starting from ``0``.  For Bell expressions stored in the ``canonical`` folder, a single additional property ``oppositeIndex`` can be required, giving the index the canonical form of the opposite Bell expression if it is also present in the database. If the canonical form of the opposite Bell expression is not present in the database, the property is omitted.
 
+.. note:: the opposite expression can always be found by flipping the sign of the coefficients, then looking for the minimal lexicographic representative. No other canonicalization step is affected by the sign flip; in particular the no-signaling parametrization is invariant under sign change.
+
 .. todo:: add links
- 

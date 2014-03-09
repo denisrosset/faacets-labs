@@ -12,6 +12,8 @@ Contents:
    :maxdepth: 2
 
    intro
+   scenario
+   representation
    spec/latest/index
 
 Indices and tables
