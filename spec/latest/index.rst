@@ -1,6 +1,10 @@
 Faacets file format, specification version 0.15
 ================================
 
+.. note:: The current version of the Faacets_ website uses an older file format, and will be updated to this file format in the next weeks (March 2014).
+
+.. _Faacets: http://www.faacets.com
+
 The Faacet interchange file format is used to exchange information about Bell expressions, oriented Bell expressions and Bell and Bell-like inequalities. It could be extended in the future to describe correlations, for example to classify non-signaling boxes.
 
 The format is based on the YAML file format version 1.2 (see YAMLSpec_), a human-readable file format which can be parsed in all major programming languages. Its information is thus organized in a hierarchy of keys, lists, mappings, etc.
@@ -93,7 +97,7 @@ representation
   - ``Non-signaling Correlators``
   - ``Non-signaling Collins-Gisin``
 
-[pas sure de tous ces noms, et on pourrait aussi ajouter les versions signaling...]
+.. todo: [pas sure de tous ces noms, et on pourrait aussi ajouter les versions signaling...]
 
 coefficients
   Vector of integer or rational coefficients describing the Bell expression.
@@ -118,8 +122,6 @@ Here are several examples of valid Bell expression specification:
     scenario: '[(2 2) (2 2)]'
     representation: Non-signaling Collins-Gisin
     coefficients: [0, -1, 0, -1, 1, 1, 0, 1, -1]
-
-[Est-ce qu'il est aussi possible de specifier une inegalite sous forme de texte? i.e. coefficients: <A1B2>+... ?]
 
 
 Symmetry group
@@ -213,33 +215,38 @@ Oriented Bell expressions are described by a Bell expression along with a direct
 Each direction ``lower`` and ``upper`` can have the following properties:
 
 bounds
-  Bounds corresponding to different sets of interest can be listed here through a mapping list. The mapping keys ``local``, ``quantum`` and ``no-signaling`` are reserved for the usual accordingly named sets. The mapping values can be either:
+  Bounds corresponding to different sets of interest can be listed here through a mapping list. The mapping keys ``local``, ``quantum`` and ``no-signaling`` are reserved for the usual accordingly named sets. The mapping values are given by a string expression made of:
 
   - integers,
-  - plus or minus infinity, written down ``-inf`` or ``inf``,
-  - rational numbers written down using a string with format ``numerator/denominator``,
-  - intervals written down as ``[lb, ub]``, where ``lb``, ``ub`` can be integers, rationals or infinities.
+  - infinity written ``inf``,
+  - rational numbers written down using the format ``numerator/denominator``,
+  - decimal numbers written using ``digits.digits``,
+  - arithmetic operators ``+``, ``-``, ``*``, ``/``,
+  - parenthesis,
+  - intervals written down as ``[lb, ub]``, where ``lb``, ``ub`` are expressions.
 
-  Decimal numbers describing floating-point values known with limited precision will be supported in a later version of this file format.
 
   Here is an example of section specifying several bounds:
   
 .. code-block:: yaml
 
-    bounds: {local: x <= 2, quantum: 'x <= [-inf, 2.828427124746191]', nosignaling: x <= 4}
+    bounds:
+      local: 2
+      quantum: [-inf, 2.828427124746191]
+      nosignaling: x <= 4
 
-facetOf
-  The fact that bounds on the Bell expression define (or not) facets for the considered sets of interest can be stored through a list of mappings under this key. The mapping keys ``local`` and ``no-signaling`` are reserved, and the mapping values are the boolean ``true`` or ``false``. If the facet-defining property is not known, the corresponding key is simply not present.
+Here, the ``[-inf, 2.828427124746191]`` interval expression for the quantum bound interval signifies that we have obtained an approximation for the quantum bound through relaxations, so that the real upper bound is below ``2.828427124746191``. The ``-inf`` side of the interval could be replaced by providing a state and measurements that achieve a quantum value.
 
-  The following is a valid ``facetOf'' section:
+keywords
+  Keywords can also be associated to an oriented Bell expression. For now, no keywords are reserved, nor is any keywords automatically computed for *oriented* expressions. Keywords here respect the same syntax as the ones for Bell expressions mentioned above. 
+
+  Special keywords specify if a bound corresponds to a facet of some polytope. The keywords ``facet-polytope`` and ``not-facet-polytope`` can be used for that effect, where ``polytope`` corresponds to the name of a bound. The keywords ``(not-)facet-local`` and ``(not-)facet-no-signaling`` are reserved. If the facet-defining property is not known, the corresponding keyword is not present.
+
+  The following is a valid ``keywords'' section:
 
 .. code-block:: yaml
 
-    facetOf: {local: true, nosignaling: false}
-
-keywords
-  Keywords can also be associated to an oriented Bell expression. For now, no keywords are reserved, nor is any keywords automatically computed for *oriented* expressions. Keywords here respect the same syntax as the ones for Bell expressions mentioned above.
-
+   keywords: [facet-local]
 
 Two orientations of a Bell expression can be specified in a single file by incorporating both a ``lower`` and an ``upper`` section in the file. This can provide a full decription of the bounds satisfied by a given Bell expression.
 
