@@ -15,6 +15,7 @@ Contents:
    scenario
    representation
    spec/latest/index
+   spec/latest/database
 
 Indices and tables
 ==================
