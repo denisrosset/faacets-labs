@@ -1,9 +1,5 @@
-Faacets file format, specification version 0.15
-================================
-
-.. note:: The current version of the Faacets_ website uses an older file format, and will be updated to this file format in the next weeks (March 2014).
-
-.. _Faacets: http://www.faacets.com
+Faacets file format
+===================
 
 The Faacet interchange file format is used to exchange information about Bell expressions, oriented Bell expressions and Bell and Bell-like inequalities. It could be extended in the future to describe correlations, for example to classify non-signaling boxes.
 

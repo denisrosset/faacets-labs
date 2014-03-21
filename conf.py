@@ -30,7 +30,8 @@ import os
 # ones.
 extensions = [
     'sphinx.ext.mathjax',
-    'sphinx.ext.todo'
+    'sphinx.ext.todo',
+    'sphinx.ext.graphviz'
     ]
 
 todo_include_todos = True

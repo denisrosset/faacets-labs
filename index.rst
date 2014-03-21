@@ -6,16 +6,16 @@
 Welcome to Faacets's documentation!
 ===================================
 
+The documentation is under construction, and will be completed according to the project roadmap :doc:`roadmap`.
+
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   intro
-   scenario
-   representation
-   spec/latest/index
-   spec/latest/database
+   roadmap
+   concepts/index
+   spec/index
 
 Indices and tables
 ==================
