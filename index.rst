@@ -6,16 +6,26 @@
 Welcome to Faacets's documentation!
 ===================================
 
-The documentation is under construction, and will be completed according to the project roadmap :doc:`roadmap`.
+The documentation is under construction, and will be completed according to the project roadmap :doc:`roadmap`, where we outline our goals for the successive beta releases.
 
-Contents:
+We are now focusing on the file format specification and the terminology used therein.
+
+The following documents are available to understand the development process:
 
 .. toctree::
    :maxdepth: 1
 
    roadmap
+   development
+
+The following documents are available about the concepts and notations used in the software and website:
+
+.. toctree::
+   :maxdepth: 1
+
    concepts/index
    spec/index
+
 
 Indices and tables
 ==================
