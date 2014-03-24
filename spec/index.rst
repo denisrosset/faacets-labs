@@ -18,6 +18,7 @@ The format is based on the YAML file format version 1.2 (see YAMLSpec_), a human
    minimal
    bounds
    keywords
+   placeholders
    decomposition
    remarkable
    symmetries
