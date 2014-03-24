@@ -7,7 +7,7 @@ On disk, this structure is represented using directories and files, which matche
 
 At the first level, the expressions are classified in three folders, corresponding to directories on disk:
 
-- *canonical*  expressions are stored in a folder named ``canonical`` represented on disk by a directory of the same name, all together, without any further refinement. The :math:`n` canonical expressions have their keys are numbered from 0 to :math:`n-1` without gaps. When the collection of canonical expressions gets large, it is stored on disk using a special *linear folder* structure described below.
+- *canonical*  expressions are stored in a folder named ``canonical`` represented on disk by a directory of the same name, all together, without any further refinement. The :math:`n` canonical expressions have their keys are numbered from 1 to :math:`n` without gaps. When the collection of canonical expressions gets large, it is stored on disk using a special *linear folder* structure described below.
 - *internal* expressions are stored in a folder named ``internal`` represented on disk by a directory of the same name. These expressions are stored as are canonical expressions, but starting the numbering from one billion `1'000'000'000`.
 - *published* expressions are in subfolders of a folder named ``pubs``. The subfolder's name is made from the publication author list followed by the year of publication written using 4 digits. We suggest to use either the publication first authors (i.e. ``Acin2004``) or the acronym made of the author names (i.e. ``CHSH1969`` or ``CGLMP04``), guided by the way the work is already cited in the literature.
   Example: the CHSH expression has path ``pubs/CHSH1969/chsh.yaml``
