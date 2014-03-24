@@ -1,43 +1,79 @@
 Representations
 ===============
 
-The concept of representations is used in several places in Faacets. It tells you two things about geometrical objects:
+Two different spaces can be used to represent joint probability distributions:
 
-- if the object represents or applies to correlations, strategy weights,
-  or (in the future) single party marginals,
-- if the object is represented in the complete signaling space, or if it is projected/represented 
-  only in the non-signaling space,
-- in which basis the object is represented.
+- joint probability distributions of the form :math:`P(ab...|xy...)` are contained in the correlation space,
+- local decompositions of the form :math:`q_{\alpha \beta ...}` are contained in the space of strategy weights.
 
-As of now, there are eight representations, which are described below.
+The correlation space contains signaling and non-properly normalized joint probability distributions. As such, we defined in FaacetsPaper_ the no-signaling subspace and its canonical projection. Because the no-signaling subspace is not fully dimensional, several of its parametrizations are used in the literature and have been implemented in Faacets: the ``Collins-Gisin`` notation (see CollinsGisin_), and the binary ``Correlators`` notation (see e.g. Sliwa_). We extended the Correlators notation in FaacetsPaper_ to non-binary outputs. We also extended both the Collins-Gisin and the Correlators notations to include signaling terms, such that there is a bijection between signaling probabilities :math:`P(ab...|xy...)`, the ``Signaling`` ``Collins-Gisin`` and ``Correlators`` notation. The transformation between the ``Non-signaling`` ``probabilities``, ``Collins-Gisin`` and ``Correlators`` notations is also bijective.
 
-Correlation representations
+As described in FaacetsPaper_ , Bell expressions can be projected in the non-signaling subspace by setting the signaling terms to 0 in the ``Collins-Gisin`` or ``Correlators`` notations.
+
+Local decompositions can be specified using either weights corresponding to deterministic points, or using ``strategy correlators`` as specified in the BilocalityPaper_.
+
+.. _BilocalityPaper: http://dx.doi.org/10.1103/PhysRevA.85.032119
+.. _CollinsGisin: http://dx.doi.org/10.1088/0305-4470/37/5/021
+.. _Sliwa: http://dx.doi.org/10.1016/S0375-9601(03)01115-0
+.. _FaacetsPaper: http://www.arxiv.org
+
+In summary, we distinguish:
+
++-------------------------------+-----------+---------+-------------------+--------------+
+|Representation name            |Shorthand  |Bijection|To                 |Used for      |
+|                               |           |with     |represent          |              |
++===============================+===========+=========+===================+==============+
+|Signaling probabilities        |SP         |SC, SG   |Probability        |Permutation   |
+|                               |           |         |distributions      |group         |
++-------------------------------+-----------+---------+-------------------+algorithms    |    
+|Non-signaling probabilities    |NP         |NC, NG   |Prob. dist.        |              |
+|                               |           |         |                   |Canonical     |
+|                               |           |         |                   |expresions    |
++-------------------------------+-----------+---------+-------------------+--------------+
+|Signaling Collins-Gisin        |SG         |SP, SC   |Prob. dist.        |              |
+|                               |           |         |                   |              |
++-------------------------------+-----------+---------+-------------------+--------------+
+|Non-signaling Collins-Gisin    |NG         |NP, NC   |Prob. dist.        |              |
++-------------------------------+-----------+---------+-------------------+--------------+
+|Signaling Correlators          |SC         |SP, SG   |Prob. dist.        |Product       |
++-------------------------------+-----------+---------+-------------------+decompositions|
+|Non-signaling Correlators      |NC         |NP, NG   |Prob. dist.        |and projection|
+|                               |           |         |                   |in            |
+|                               |           |         |                   |non-signaling |
+|                               |           |         |                   |subspace      |
++-------------------------------+-----------+---------+-------------------+--------------+
+|Strategy Correlators           |T          |W        |Local              |              |
+|                               |           |         |decompositions     |              |
++-------------------------------+-----------+---------+-------------------+--------------+
+|Strategy Weights               |W          |T        |Local dec.         |              |
++-------------------------------+-----------+---------+-------------------+--------------+
+
+Probabilites representations
+----------------------------
+
+In this representation, we simply write enumerate the coefficients of the joint probability distribution :math:`P(ab...|xy...)` (or the coefficients of a Bell expression acting on such distributions) in the following order: we  increment first Alice's outcome $a$, then increment Alice's setting $x$, then increment Bob's outcome $b$, then increment Bob's setting $y$, and so on.
+
+There is no difference in the order of terms between ``Signaling`` and ``Non-signaling Probabilities``, except that distributions or expressions in the ``Non-signaling Probabilities`` representation are non-signaling or have been projected.
+
+For the CHSH scenario with two parties and binary measurement settings/outcomes, the order of terms is: ``P(11|11), P(21|11), P(11|21), P(21|21), P(12|11), P(22|11), P(12|21), P(22|21), P(11|12), P(21|12), P(11|22), P(21|22), P(12|12), P(22|12), P(12|22), P(22|22)``.
+
+
+Correlators representations
 ---------------------------
 
-- the `P` Probability representation, where all coefficients P(ab...|xy...) are enumerated
-- the `G` Collins-Gisin representation (see Collins&Gisin, doi:10.1088/0305-4470/37/5/021)
-- the `C` correlators representation (see e.g. Sliwa, doi:10.1016/S0375-9601(03)01115-0)
+To be described.
 
-These are prefixed either with `S` if the representation is fully dimensional and includes
-the signaling and normalization degrees of freedom, or with `N` if the representation
-represents the non-signaling subspace.
+Collins-Gisin representations
+-----------------------------
 
-For any object, conversion between any two of NPRepr, NGRepr, NCRepr should be bijective,
-the same for the conversion between any two of SPRepr, SGRepr, SCRepr, the same for the
-conversion between TRepr and WRepr.
+To be described.
 
-When conversion between two representations is bijective (i.e. without loss of information),
-we say that these representations are *compatible*.
+Strategy Correlators representation
+-----------------------------------
 
-Strategy weights representations
---------------------------------
+To be described.
 
-- the `W` representation of the decomposition of a local point
-  over deterministic strategies, with weights `q`
-  (see Branciard et al. doi:10.1103/PhysRevA.85.032119)
-- the `T` representation of `strategy correlators`
-  (see the definition of e_ijk in Branciard et al. doi:10.1103/PhysRevA.85.032119)
+Strategy Weights representation
+-------------------------------
 
-All the `Representation` values defined here correspond to `Repr` inner objects in either
-`Party` or `Scenario` which describe the characteristics of the given representation for the
-party or scenario enclosing them.
+To be described.
