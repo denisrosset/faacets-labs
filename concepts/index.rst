@@ -6,3 +6,4 @@ Overview of Faacets concepts
 
    scenario
    representation
+   relabelings
