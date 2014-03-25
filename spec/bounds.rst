@@ -33,7 +33,7 @@ keywords
 
   Special keywords specify if a bound corresponds to a facet of some polytope. The keywords ``facet-polytope`` and ``not-facet-polytope`` can be used for that effect, where ``polytope`` corresponds to the name of a bound. The keywords ``(not-)facet-local`` and ``(not-)facet-no-signaling`` are reserved. If the facet-defining property is not known, the corresponding keyword is not present.
 
-  The following is a valid ``keywords'' section:
+  The following is a valid ``keywords`` section:
 
 .. code-block:: yaml
 

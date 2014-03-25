@@ -8,27 +8,12 @@ Welcome to Faacets's documentation!
 
 The documentation is under construction, and will be completed according to the project roadmap :doc:`roadmap`, where we outline our goals for the successive beta releases. We are working right now on the file format specification and the terminology used in the software.
 
-The following documents are available to understand the development process:
-
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    roadmap
    development
-
-The following documents are available about the concepts and notations used in the software and website:
-
-.. toctree::
-   :maxdepth: 1
-
+   cli/index
    concepts/index
    spec/index
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
