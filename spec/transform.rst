@@ -78,7 +78,7 @@ Example: the CHSH inequality lifted in the scenario ``[(2 2 2) (2 2 2)]``
 .. code-block:: yaml
 
     type: LiftingTransform
-    lifting: Lifting([(2 2)+(2) (2 2)+(2)])
+    lifting: [(2 2)+(2) (2 2)+(2)]
     of:
         type: BellExpression
         scenario: '[(2 2) (2 2)]'
@@ -111,7 +111,7 @@ An ``OppositeTransform`` computes the opposite Bell Expression by multiplying it
 PermutationTransform
 --------------------
 
-A ``PermutationTransform`` applies a permutation/relabeling of parties, measurement settings and/or outcomes to a Bell expression. The ``PermutationTransform`` contains an ``of`` key describing the expression to be transformed, and a ``permutation`` key containing a string representing the permutation. The notation for permutations is described in :doc:`/concepts/relabelings`.
+A ``PermutationTransform`` applies a permutation/relabeling of parties, measurement settings and/or outcomes to a Bell expression, without changing the shape of the Bell scenario. The ``PermutationTransform`` contains an ``of`` key describing the expression to be transformed, and a ``permutation`` key containing a string representing the permutation. The notation for permutations is described in :doc:`/concepts/relabelings`.
 
 Example: decomposition of the original I3322 inequality
 
@@ -156,6 +156,38 @@ Example: the decomposition of the original Guess Your Neighbor's Input inequalit
               type: AffineTransform
               affine: 1/64 * x + 1/8
               of: {type: CanonicalExpression, index: 13}
+
+ReorderingTransform
+-------------------
+
+A ``ReorderingTransform`` is similar to a ``PermutationTransform``, except that it specifically changes the shape of the Bell scenario, and is composed only of party and inputs permutations. The notation is similar to the notation of permutations, and is described under :doc:`/concepts/relabelings`.
+
+Example: the Pironio inequality lifted in scenario ``[(3 2 2) (3 2)]``
+
+.. code-block:: yaml
+
+    type: LiftingTransform
+    lifting: [(2+(1 0) 2 2) (3 2)]
+    of:
+      type: ReorderingTransform
+      reordering: (A,B)
+      of:
+        type: PermutationTransform
+        permutation: A2(1,2)
+        of:
+          type: AffineTransform
+          affine: 3/52 * x - 1/26
+          of:
+            type: BellExpression
+            scenario: '[(3 2) (2 2 2)]'
+            representation: Non-signaling Probabilities
+            coefficients: [-7, 5, 5, -3, 5, 7, -5, -5, 7, -9, -5, -5, 7, 7, -9, 5,
+              5, -7, -3, 5, -5, 7, -5, 7, -9, 5, -7, 5, -3, 5]
+            upper:
+              bounds: {local: '18'}
+              keywords: [facet-local]
+            keywords: [canonical, minimal, not-composite, not-io-lifted]
+
 
 RepresentationTransform
 -----------------------
