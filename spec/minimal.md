@@ -1,3 +1,8 @@
+---
+layout: page
+title: Minimal keys for Bell Expressions
+---
+
 Minimal keys for Bell Expressions
 =================================
 

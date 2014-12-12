@@ -1,3 +1,8 @@
+---
+layout: page
+title: Development process
+---
+
 Development process
 ===================
 

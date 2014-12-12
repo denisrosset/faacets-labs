@@ -1,3 +1,8 @@
+---
+layout: page
+title: Decomposition and remarkable forms
+---
+
 Decomposition and remarkable forms
 ==================================
 

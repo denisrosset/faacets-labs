@@ -1,3 +1,8 @@
+---
+layout: page
+title: Draft pages
+---
+
 Draft pages
 ===========
 

@@ -1,3 +1,8 @@
+---
+layout: page
+title: Faacets file format (beta 2)
+---
+
 Faacets file format (beta 2)
 ============================
 

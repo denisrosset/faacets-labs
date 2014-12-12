@@ -1,3 +1,8 @@
+---
+layout: page
+title: Database index format
+---
+
 Database index format
 =====================
 

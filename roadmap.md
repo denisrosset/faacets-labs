@@ -1,3 +1,8 @@
+---
+layout: page
+title: Roadmap
+---
+
 Faacets Roadmap
 ===============
 

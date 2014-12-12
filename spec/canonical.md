@@ -1,3 +1,8 @@
+---
+layout: page
+title: Canonical Bell expressions
+---
+
 Canonical Bell Expressions
 ==========================
 

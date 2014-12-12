@@ -1,3 +1,8 @@
+---
+layout: page
+title: Lower and upper bounds
+---
+
 Lower and upper bounds
 ======================
 

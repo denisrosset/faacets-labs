@@ -1,3 +1,8 @@
+---
+layout: page
+title: Welcome to Faacets's documentation!
+---
+
 Welcome to Faacets's documentation!
 ===================================
 

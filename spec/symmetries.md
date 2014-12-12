@@ -1,3 +1,8 @@
+---
+layout: page
+title: Bell expression symmetries
+---
+
 Bell expression symmetries
 ==========================
 

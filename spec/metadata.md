@@ -1,3 +1,8 @@
+---
+layout: page
+title: File Metadata
+---
+
 File Metadata
 =============
 

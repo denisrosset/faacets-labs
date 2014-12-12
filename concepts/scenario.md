@@ -1,3 +1,8 @@
+---
+layout: page
+title: Scenarios and parties
+---
+
 Scenarios and parties
 =====================
 

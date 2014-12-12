@@ -1,3 +1,8 @@
+---
+layout: page
+title: Compendium structure
+---
+
 Compendium structure
 ====================
 

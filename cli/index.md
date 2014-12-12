@@ -1,3 +1,8 @@
+---
+layout: page
+title: Command-line tool
+---
+
 Command-line tool
 =================
 
