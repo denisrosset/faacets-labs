@@ -1,6 +1,9 @@
 # sphinx build folder
 _build
 
+# Jekyll build folder
+_site
+
 # Compiled source #
 ###################
 *.com
