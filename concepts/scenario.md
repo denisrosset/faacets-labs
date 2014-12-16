@@ -3,9 +3,6 @@ layout: page
 title: Scenarios and parties
 ---
 
-Scenarios and parties
-=====================
-
 Bell experiments are performed using several observers, called parties.
 These parties are often numbered and named alphabetically Alice, Bob,
 Charlie and so on. A sequence of parties is a Bell scenario.

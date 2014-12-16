@@ -3,9 +3,6 @@ layout: page
 title: Minimal keys for Bell Expressions
 ---
 
-Minimal keys for Bell Expressions
-=================================
-
 The simplest Bell expression is described by the following YAML
 fragment:
 

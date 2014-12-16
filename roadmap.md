@@ -1,10 +1,7 @@
 ---
 layout: page
-title: Roadmap
+title: Faacets Roadmap
 ---
-
-Faacets Roadmap
-===============
 
 This document presents the developement steps that will lead the Faacets
 platform to its first release. The goal of the first release is to

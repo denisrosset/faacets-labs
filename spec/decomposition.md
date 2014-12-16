@@ -3,9 +3,6 @@ layout: page
 title: Decomposition and remarkable forms
 ---
 
-Decomposition and remarkable forms
-==================================
-
 The operations that relate a Bell expression to its canonical form are
 stored in a YAML file to avoid expensive recomputations. The motivation
 for these operations is described in

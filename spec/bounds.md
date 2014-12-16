@@ -3,9 +3,6 @@ layout: page
 title: Lower and upper bounds
 ---
 
-Lower and upper bounds
-======================
-
 Oriented Bell expressions are described by a Bell expression along with
 a direction `<=` or `>=`. Data about an oriented Bell expression is
 written using a `BellExpression` along with additional data in the

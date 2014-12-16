@@ -3,9 +3,6 @@ layout: page
 title: Representations
 ---
 
-Representations
-===============
-
 Two different spaces can be used to represent joint probability
 distributions:
 

@@ -3,9 +3,6 @@ layout: page
 title: Compendium structure
 ---
 
-Compendium structure
-====================
-
 A *compendium* is a collection of Bell expressions, represented as a
 structure of folders containing subfolders and expressions in Faacets.
 Paths in this structure are written using the `/` separator, without

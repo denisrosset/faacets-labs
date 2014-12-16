@@ -3,9 +3,6 @@ layout: page
 title: File Metadata
 ---
 
-File Metadata
-=============
-
 The faacet file format does not use YAML tags to denote the types of
 objects. Instead, the type of an object is given by a required `type`
 key at the base level, associated with a string value.

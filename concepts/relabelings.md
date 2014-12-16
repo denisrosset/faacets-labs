@@ -3,9 +3,6 @@ layout: page
 title: Relabelings/permutations
 ---
 
-Relabelings/permutations
-========================
-
 Permutations are specified by a string composed of relabelings of
 measurement outcomes, measurement settings and party permutations, in
 that order, separated by single spaces. Note that permutations acts as a

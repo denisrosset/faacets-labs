@@ -1,9 +1,6 @@
 ---
 layout: page
-title: Reader
+title: BancalReader
 ---
-
-BancalReader
-============
 
 See URL <http://www.gapoptic.unige.ch/Publications/bellinequalities>.

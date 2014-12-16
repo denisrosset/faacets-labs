@@ -3,9 +3,6 @@ layout: page
 title: Bell expression symmetries
 ---
 
-Bell expression symmetries
-==========================
-
 Information about the symmetry group of an expression can be optionally
 written down in the YAML file under the optional `symmetries` key. The
 Faacets command line tool can also compute this information from

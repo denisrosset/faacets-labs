@@ -3,9 +3,6 @@ layout: page
 title: Development process
 ---
 
-Development process
-===================
-
 The source code and data files are hosted on Github in several
 repositories. We are migrating these repositories to the branching model
 proposed in

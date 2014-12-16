@@ -3,9 +3,6 @@ layout: page
 title: Canonical Bell expressions
 ---
 
-Canonical Bell Expressions
-==========================
-
 To consider a Bell expression for inclusion in the `Faacets` database,
 the Bell expression should be `canonical` (see the this keyword
 description). In addition, the file should not provide lower bounds, as

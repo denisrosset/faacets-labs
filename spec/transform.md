@@ -3,9 +3,6 @@ layout: page
 title: Transforms
 ---
 
-Transforms
-==========
-
 AffineTransform
 ---------------
 

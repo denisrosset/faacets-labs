@@ -3,9 +3,6 @@ layout: page
 title: Keywords
 ---
 
-Keywords
-========
-
 This section allows for the specification of properties satisfied by a
 Bell expression. Keywords can consist of alphanumerical characters plus
 the `-` and underscore `_`. They are specified as a sequence of strings:

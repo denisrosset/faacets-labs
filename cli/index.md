@@ -3,9 +3,6 @@ layout: page
 title: Command-line tool
 ---
 
-Command-line tool
-=================
-
 The Faacets command line tool can be launched using the library JAR as
 follows:
 

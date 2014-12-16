@@ -3,9 +3,6 @@ layout: page
 title: Faacets file format (beta 2)
 ---
 
-Faacets file format (beta 2)
-============================
-
 > **note**
 >
 > The current version (beta 1) of the
