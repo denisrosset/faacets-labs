@@ -38,11 +38,20 @@ remarkableGenerators
 
 As an example, here is the symmetry information for the CHSH expression.
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 symmetries:
   numberOfRepresentatives: 8
   remarkableGenerators:
     outputPerms: ['A1(1,2) A2(1,2) B1(1,2) B2(1,2)']
     outputInputPerms: ['A2(1,2) B(1,2)', 'B1(1,2) A(1,2)']
     rest: ['A(1,2) B(1,2) (A,B)']
-~~~~
+{% endhighlight %}
+
+
+
+
+Todo
+----
+
+Add link to our paper, to the Faacets command line tool documentation
+

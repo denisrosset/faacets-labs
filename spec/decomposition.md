@@ -28,18 +28,16 @@ the `OriginalExpression` placeholder.
 Reserved keys for remarkable forms include:
 
 maximal
-
-> Describes the maximal lexicographic of the Bell expression. Has to be
-> present for canonical expressions, because it is used to compute
-> quickly the minimal lexicographic representative of the opposite of a
-> canonical expression.
+:   Describes the maximal lexicographic of the Bell expression. Has to be
+    present for canonical expressions, because it is used to compute
+    quickly the minimal lexicographic representative of the opposite of a
+    canonical expression.
 
 fullySymmetric
-
-> Describes the representative of a Bell expression under relabelings
-> fully symmetric under the permutation of parties. If several of such
-> representatives exists, the form should reference the one minimal
-> under lexicographic ordering.
+:   Describes the representative of a Bell expression under relabelings
+    fully symmetric under the permutation of parties. If several of such
+    representatives exists, the form should reference the one minimal
+    under lexicographic ordering.
 
 Bell Expressions placeholders
 -----------------------------
@@ -48,11 +46,9 @@ Two special Bell Expression placeholders can be used in decompositions
 or remarkable forms:
 
 CanonicalExpression
-
-> This placeholder has a single key `index` which references a canonical
-> Bell expression in the canonical folder of a compendium.
+:   This placeholder has a single key `index` which references a canonical
+    Bell expression in the canonical folder of a compendium.
 
 OriginalExpression
-
-> Used as a placeholder in the remarkable forms section, to reference
-> the main Bell expression of the file.
+:   Used as a placeholder in the remarkable forms section, to reference
+    the main Bell expression of the file.

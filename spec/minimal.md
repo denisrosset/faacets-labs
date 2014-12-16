@@ -7,12 +7,12 @@ parent: Faacets file format (beta 2)
 The simplest Bell expression is described by the following YAML
 fragment:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 type: BellExpression
 scenario: '[(2 2) (2 2)]'
 representation: Non-signaling Correlators
 coefficients: [0, 0, 0, 0, 1, -1, 0, 1, 1]
-~~~~
+{% endhighlight %}
 
 The following properties are always required:
 
@@ -28,14 +28,14 @@ scenario
     For example, a scenario with two parties, two settings and two
     outcomes is specified by:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 scenario: [(2 2) (2 2)]
-~~~~
+{% endhighlight %}
 
 representation
 :   This key specifies the parametrization used for the Bell expression
     coefficients. The supported representations are detailed in
-    ../concepts/representation.
+    [representation](../concepts/representation.html).
 
 coefficients
 :   Vector of integer or rational coefficients describing the Bell
@@ -51,17 +51,17 @@ Here are several examples of valid Bell expressions.
 
 The CHSH inequality, written in the Collins-Gisin notation:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 type: BellExpression
 scenario: '[(2 2) (2 2)]'
 representation: Non-signaling Collins-Gisin
 coefficients: [0, -1, 0, -1, 1, 1, 0, 1, -1]
-~~~~
+{% endhighlight %}
 
 The Guess Your Neighbor's Input inequality, written using full
 Probabilities:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 type: BellExpression
 scenario: '[(2 2) (2 2) (2 2)]'
 representation: Signaling Probabilities
@@ -70,4 +70,5 @@ coefficients:
         0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0,
         0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     denominator: 4
-~~~~
+{% endhighlight %}
+

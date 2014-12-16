@@ -33,11 +33,11 @@ sources
 
     Here is an example of valid sources section:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 sources:
   upper.bounds.local: ['doi:10.1007/BF02903286']
   upper.bounds.quantum: ['doi:10.1103/PhysRevA.82.022116', 'arXiv:1006.3032']
-~~~~
+{% endhighlight %}
 
 shortName
 :   A short name for the object in the current file can be described by
@@ -47,9 +47,9 @@ shortName
 
     Example:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 shortName: CHSH
-~~~~
+{% endhighlight %}
 
 names
 :   One or several names used in the litterature for the object in the
@@ -57,6 +57,7 @@ names
 
     Example:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 names: [Clauser-Horne-Shimony-Holt inequality, Clauser-Horne inequality]
-~~~~
+{% endhighlight %}
+

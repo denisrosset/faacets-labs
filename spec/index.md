@@ -28,3 +28,26 @@ The format is based on the YAML file format version 1.2 (see
 file format which can be parsed in all major programming languages. Its
 information is thus organized in a hierarchy of keys, lists, mappings,
 etc.
+
+<br>
+
+ - [Minimal keys for Bell Expressions](minimal.html)
+ - [Lower and upper bounds](bounds.html)
+ - [Keywords](keywords.html)
+ - [Decomposition and remarkable forms](decomposition.html)
+   - Bell Expressions placeholders
+ - [Transforms](transform.html)
+   - AffineTransform
+   - BellExpressionProduct
+   - LiftingTransform
+   - OppositeTransform
+   - PermutationTransform
+   - RedundantTransform
+   - ReorderingTransform
+   - RepresentationTransform
+   - RepresentativeTransform
+ - [Bell expression symmetries](symmetries.html)
+ - [File Metadata](metadata.html)
+ - [Canonical Bell Expressions](canonical.html)
+
+

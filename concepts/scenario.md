@@ -25,11 +25,12 @@ Examples:
 
 In the [FaacetsPaper](http://www.arxiv.org), we introduced the following
 notation:
-$[(k_{11} k_{12} \ldots k_{1 m_1})~(k_{21} k_{22} \ldots k_{2 m_2}) \ldots (k_{n 1} k_{n 2} \ldots k_{n m_n})]$,
-with $m_i \ge 1$ is the number of measurement settings for the
-$i^\text{th}$ party and $k_{i j} \ge 2$ is the number of measurement
-outcomes for the $j^\text{th}$ measurement setting of the $i^\text{th}$
+\\( (k\_{11} k\_{12} \ldots k\_{1 m\_1})~(k\_{21} k\_{22} \ldots k\_{2 m\_2}) \ldots (k\_{n 1} k\_{n 2} \ldots k\_{n m\_n}) \\) ,
+with \\(m\_i \ge 1\\) is the number of measurement settings for the
+\\(i^\text{th}\\) party and \\(k\_{i j} \ge 2\\) is the number of measurement
+outcomes for the \\(j^\text{th}\\) measurement setting of the \\(i^\text{th}\\)
 party.
+
 
 Canonical parties
 -----------------
@@ -47,7 +48,7 @@ Canonical scenarios
 Notice also that scenarios `[(2 2) (3 3)]` and `[(3 3) (2 2)]` are
 identical under reordering of parties. We thus prescribe that a scenario
 is canonical when its parties are themselves canonical and ordered
-lexicographically: for all successive non-identical parties $i$ and
-$i+1$, there is a $j \ge 0$ such that $\forall k < j$ we have
-$k_{i k} = k_{i+1, k}$ and $k_{i j} > k_{i+1, j}$. For these ordering
-purposes, we define $k_{i j} = 0$ for $j > m_i$.
+lexicographically: for all successive non-identical parties \(i\) and
+\\(i+1\\), there is a \\(j \ge 0\\) such that \\(\forall k < j\\) we have
+\\(k\_{i k} = k\_{i+1, k}\\) and \\(k\_{i j} \> k\_{i+1, j}\\). For these ordering
+purposes, we define \\(k\_{i j} = 0\\) for \\(j > m\_i\\).

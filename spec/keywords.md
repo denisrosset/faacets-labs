@@ -8,9 +8,9 @@ This section allows for the specification of properties satisfied by a
 Bell expression. Keywords can consist of alphanumerical characters plus
 the `-` and underscore `_`. They are specified as a sequence of strings:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 keywords: ['minimal', 'not-io-lifted']
-~~~~
+{% endhighlight %}
 
 The following keywords are reserved, and can be computed automatically
 using the `Faacets` command-line tool:
@@ -46,5 +46,12 @@ canonical
     `not-composite`. In addition, the scenario itself is ordered
     canonically, and the bound has been extracted from the coefficients,
     who themselves are written down using integers with GCD = 1.
+
+
+
+
+Todo
+----
+Add link to our paper, to the Faacets command line tool documentation
 
 

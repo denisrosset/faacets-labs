@@ -6,9 +6,9 @@ title: Representations
 Two different spaces can be used to represent joint probability
 distributions:
 
--   joint probability distributions of the form $P(ab...|xy...)$ are
+-   joint probability distributions of the form \\(P(ab...|xy...)\\) are
     contained in the correlation space,
--   local decompositions of the form $q_{\alpha \beta ...}$ are
+-   local decompositions of the form \\(q\_{\alpha \beta ...}\\) are
     contained in the space of strategy weights.
 
 The correlation space contains signaling and non-properly normalized
@@ -23,7 +23,7 @@ binary `Correlators` notation (see e.g.
 the Correlators notation in [FaacetsPaper](http://www.arxiv.org) to
 non-binary outputs. We also extended both the Collins-Gisin and the
 Correlators notations to include signaling terms, such that there is a
-bijection between signaling probabilities $P(ab...|xy...)$, the
+bijection between signaling probabilities \\(P(ab...|xy...)\\), the
 `Signaling` `Collins-Gisin` and `Correlators` notation. The
 transformation between the `Non-signaling` `probabilities`,
 `Collins-Gisin` and `Correlators` notations is also bijective.
@@ -38,39 +38,43 @@ the [BilocalityPaper](http://dx.doi.org/10.1103/PhysRevA.85.032119).
 
 In summary, we distinguish:
 
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Representation name |Shorthand |Bijection|To |Used for | | | |with
-|represent | |
-+===============================+===========+=========+===================+==============+
-|Signaling probabilities |SP |SC, SG |Probability |Permutation | | | |
-|distributions |group |
-+-------------------------------+-----------+---------+-------------------+algorithms
-| |Non-signaling probabilities |NP |NC, NG |Prob. dist. | | | | | |
-|Canonical | | | | | |expresions |
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Signaling Collins-Gisin |SG |SP, SC |Prob. dist. | | | | | | | |
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Non-signaling Collins-Gisin |NG |NP, NC |Prob. dist. | |
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Signaling Correlators |SC |SP, SG |Prob. dist. |Product |
-+-------------------------------+-----------+---------+-------------------+decompositions|
-|Non-signaling Correlators |NC |NP, NG |Prob. dist. |and projection| | |
-| | |in | | | | | |non-signaling | | | | | |subspace |
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Strategy Correlators |T |W |Local | | | | | |decompositions | |
-+-------------------------------+-----------+---------+-------------------+--------------+
-|Strategy Weights |W |T |Local dec. | |
-+-------------------------------+-----------+---------+-------------------+--------------+
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Representation name            |Shorthand  | Bijection |    To             | Used for          |
+|                               |           |   with    | represent         |                   |
+|===============================|===========|===========|===================|===================|
+|Signaling probabilities        |SP         |SC, SG     |Probability        |Permutation        |
+|                               |           |           |distributions      |group              |
+|-------------------------------|-----------|-----------|-------------------|algorithms,        |
+|Non-signaling probabilities    |NP         |NC, NG     |Prob. dist.        |Canonical          |
+|                               |           |           |                   |expresions         |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Signaling Collins-Gisin        |SG         |SP, SC     |Prob. dist.        |                   |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Non-signaling Collins-Gisin    |NG         |NP, NC     |Prob. dist.        |                   |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Signaling Correlators          |SC         |SP, SG     |Prob. dist.        |Product            |
+|-------------------------------|-----------|-----------|-------------------|decompositions     |
+|Non-signaling Correlators      |NC         |NP, NG     |Prob. dist.        |and projection     |
+|                               |           |           |                   |in                 |
+|                               |           |           |                   |non-signaling      |
+|                               |           |           |                   |subspace           |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Strategy Correlators           |T          |W          |Local              |                   |
+|                               |           |           |decompositions     |                   |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+|Strategy Weights               |W          |T          |Local dec.         |                   |
+|-------------------------------|-----------|-----------|-------------------|-------------------|
+
 
 Probabilites representations
 ----------------------------
 
 In this representation, we simply write enumerate the coefficients of
-the joint probability distribution $P(ab...|xy...)$ (or the coefficients
+the joint probability distribution \\(P(ab...|xy...)\\) (or the coefficients
 of a Bell expression acting on such distributions) in the following
-order: we increment first Alice's outcome \$a\$, then increment Alice's
-setting \$x\$, then increment Bob's outcome \$b\$, then increment Bob's
-setting \$y\$, and so on.
+order: we increment first Alice's outcome \\(a\\), then increment Alice's
+setting \\(x\\), then increment Bob's outcome \\(b\\), then increment Bob's
+setting \\(y\\), and so on.
 
 There is no difference in the order of terms between `Signaling` and
 `Non-signaling Probabilities`, except that distributions or expressions

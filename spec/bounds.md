@@ -30,12 +30,12 @@ bounds
 
     Here is an example of section specifying several bounds:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 bounds:
   local: 2
   quantum: [-inf, 2.828427124746191]
   nosignaling: 4
-~~~~
+{% endhighlight %}
 
 Here, the `[-inf, 2.828427124746191]` interval expression for the
 quantum bound interval signifies that we have obtained an approximation
@@ -59,9 +59,9 @@ keywords
 
     The following is a valid `keywords` section:
 
-~~~~ {.sourceCode .yaml}
+{% highlight yaml %}
 keywords: [facet-local]
-~~~~
+{% endhighlight %}
 
 Two orientations of a Bell expression can be specified in a single file
 by incorporating both a `lower` and an `upper` section in the file. This
