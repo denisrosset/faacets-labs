@@ -34,27 +34,51 @@
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav">
+          	<li><a href="http://www.faacets.com">Faacets main site</a></li>
+          <!--
             {% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
             {% include JB/pages_list %}
+            -->
           </ul>
         </div>
       </div>
     </nav>
     <div class="container">
-      {{ content }}
-      <hr>
-      <footer>
-        <p>
-          &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-          <span class="pull-right text-muted">
-            powered by
-            <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
-            and <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap 3.0.3</a>
-          </span>
-        </p>
-      </footer>
+    
+        <!-- We add a menu on the left -->
+        <div class="col-md-3">
+        <div class="nav">
+        {% assign pages = site.pages | sort:"url"  %}
+        <ul class="nav nav-pills nav-stacked">
+          {% for p in pages %}
+            <li>
+              <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
+                {{ p.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        </div>
+        </div>
+
+        <div class="col-md-9">
+          {{ content }}
+        </div>
     </div>
+ 
+    <hr>
+    <footer>
+      <p>
+        &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+        <span class="pull-right text-muted">
+          powered by
+          <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
+          and <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap 3.0.3</a>
+        </span>
+      </p>
+    </footer>
+ 
 
     {% include JB/analytics %}
     <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script>
