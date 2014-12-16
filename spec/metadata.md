@@ -1,6 +1,7 @@
 ---
 layout: page
 title: File Metadata
+parent: Faacets file format (beta 2)
 ---
 
 The faacet file format does not use YAML tags to denote the types of

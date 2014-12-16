@@ -44,9 +44,73 @@
         </div>
       </div>
     </nav>
-    <div class="container">
     
+
+
+<!-- The following is an example of foldable menu:
+<div class="container">
+	<div class="row">
+        <div class="well" style="width:300px; padding: 8px 0;">
+                <ul class="nav nav-list">
+                    <li><label class="tree-toggler nav-header"><a href="#">Header 1</a></label>
+                        <ul class="nav nav-list tree">
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><label class="tree-toggler nav-header">Header 1.1</label>
+                                <ul class="nav nav-list tree">
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><label class="tree-toggler nav-header">Header 1.1.1</label>
+                                        <ul class="nav nav-list tree">
+                                            <li><a href="#">Link</a></li>
+                                            <li><a href="#">Link</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+	</div>
+</div> -->
+    
+    <div class="container">
         <!-- We add a menu on the left -->
+        <!-- The menu will display all pages which have been given a variable 'parent' which
+             relates it somehow to the 'main' page. The menu follows the tree structure defined by
+             the pairs of variables 'title' and 'parent': a page appears as submenu of another one
+             iff its parent name is the same as the title of the first page. Pages with no parents
+             must be given the parent name 'main'. -->
+        {% assign pages1 = site.pages | sort:"url"  %}
+        <div class="col-md-3">
+                <div class="well">
+                    <ul class="nav nav-list">
+                        {% for p1 in pages1 %}
+                          {% if p1.parent == "main" %}
+                            <!-- <li><label class="tree-toggler nav-header">{{p1.title}}</label> -->
+                            <li><label class="tree-toggler nav-header"><a {% if p.url == page.url %}class="active"{% endif %} href="{{p1.url}}">{{p1.title}}</a></label>
+                              <!-- Now we look for all pages which have this main page as parent -->
+                              {% assign pages2 = site.pages | sort:"url" %}
+                              <ul class="nav nav-list tree">
+                                {% for p2 in pages2 %}
+                                  {% if p2.parent == p1.title %}
+                                  <li><a {% if p.url == page.url %}class="active"{% endif %} href="{{p2.url}}">{{p2.title}}</a></li>
+                                  {% endif %}
+                                {% endfor %}
+                              </ul>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+        </div>
+
+        <div class="col-md-9">
+          {{ content }}
+        </div>
+    
+        <!-- Simpler, but unstructured menu
         <div class="col-md-3">
         <div class="nav">
         {% assign pages = site.pages | sort:"url"  %}
@@ -60,11 +124,7 @@
           {% endfor %}
         </ul>
         </div>
-        </div>
-
-        <div class="col-md-9">
-          {{ content }}
-        </div>
+        </div> -->
     </div>
  
     <hr>
@@ -84,4 +144,14 @@
     <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script>
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
   </body>
+  
+  <!-- We need some scripts to deal with the menu -->
+  <script>
+    $(document).ready(function () {
+        $('label.tree-toggler').click(function () {
+            $(this).parent().children('ul.tree').toggle(300);
+        });
+    });
+  </script>
+
 </html>

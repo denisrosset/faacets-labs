@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Canonical Bell expressions
+parent: Faacets file format (beta 2)
 ---
 
 To consider a Bell expression for inclusion in the `Faacets` database,

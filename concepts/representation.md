@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Representations
+parent: Overview of Faacets concepts
 ---
 
 Two different spaces can be used to represent joint probability

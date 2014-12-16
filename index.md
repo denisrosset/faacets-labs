@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Welcome to Faacets's documentation!
+parent: main
 ---
 
 {% include JB/setup %}

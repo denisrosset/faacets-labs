@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Compendium structure
+parent: Draft pages
 ---
 
 A *compendium* is a collection of Bell expressions, represented as a

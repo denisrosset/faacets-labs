@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Lower and upper bounds
+parent: Faacets file format (beta 2)
 ---
 
 Oriented Bell expressions are described by a Bell expression along with

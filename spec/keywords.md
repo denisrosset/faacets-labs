@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Keywords
+parent: Faacets file format (beta 2)
 ---
 
 This section allows for the specification of properties satisfied by a

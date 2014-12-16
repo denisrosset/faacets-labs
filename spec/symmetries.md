@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Bell expression symmetries
+parent: Faacets file format (beta 2)
 ---
 
 Information about the symmetry group of an expression can be optionally

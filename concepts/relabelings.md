@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Relabelings/permutations
+parent: Overview of Faacets concepts
 ---
 
 Permutations are specified by a string composed of relabelings of

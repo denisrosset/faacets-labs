@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Faacets file format (beta 2)
+parent: main
 ---
 
 > **note**

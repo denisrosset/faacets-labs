@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Minimal keys for Bell Expressions
+parent: Faacets file format (beta 2)
 ---
 
 The simplest Bell expression is described by the following YAML

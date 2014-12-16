@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Decomposition and remarkable forms
+parent: Faacets file format (beta 2)
 ---
 
 The operations that relate a Bell expression to its canonical form are
