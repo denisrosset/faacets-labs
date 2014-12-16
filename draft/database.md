@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Database index format
-parent: Draft pages
 ---
 
 Entries

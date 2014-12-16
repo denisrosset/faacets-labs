@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Faacets Roadmap
-parent: main
 ---
 
 This document presents the developement steps that will lead the Faacets

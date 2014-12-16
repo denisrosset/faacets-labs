@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Scenarios and parties
-parent: Overview of Faacets concepts
 ---
 
 Bell experiments are performed using several observers, called parties.

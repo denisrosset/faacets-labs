@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Core
-parent: main
+children:
+  - core/actors.md
+  - core/reader.md
 ---
 
 

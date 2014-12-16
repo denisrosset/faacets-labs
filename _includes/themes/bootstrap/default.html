@@ -46,112 +46,96 @@
     </nav>
     
 
-
-<!-- The following is an example of foldable menu:
-<div class="container">
-	<div class="row">
-        <div class="well" style="width:300px; padding: 8px 0;">
-                <ul class="nav nav-list">
-                    <li><label class="tree-toggler nav-header"><a href="#">Header 1</a></label>
-                        <ul class="nav nav-list tree">
-                            <li><a href="#">Link</a></li>
-                            <li><a href="#">Link</a></li>
-                            <li><label class="tree-toggler nav-header">Header 1.1</label>
-                                <ul class="nav nav-list tree">
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><label class="tree-toggler nav-header">Header 1.1.1</label>
-                                        <ul class="nav nav-list tree">
-                                            <li><a href="#">Link</a></li>
-                                            <li><a href="#">Link</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-        </div>
-	</div>
-</div> -->
     
     <div class="container">
-        <!-- We add a menu on the left -->
-        <!-- The menu will display all pages which have been given a variable 'parent' which
-             relates it somehow to the 'main' page. The menu follows the tree structure defined by
-             the pairs of variables 'title' and 'parent': a page appears as submenu of another one
-             iff its parent name is the same as the title of the first page. Pages with no parents
-             must be given the parent name 'main'. -->
-        {% assign pages1 = site.pages | sort:"url"  %}
-        <div class="col-md-3">
-                <div class="well">
-                    <ul class="nav nav-list">
-                        {% for p1 in pages1 %}
-                          {% if p1.parent == "main" %}
-                            <!-- <li><label class="tree-toggler nav-header">{{p1.title}}</label> -->
-                            <li><label class="tree-toggler nav-header"><a {% if p.url == page.url %}class="active"{% endif %} href="{{p1.url}}">{{p1.title}}</a></label>
-                              <!-- Now we look for all pages which have this main page as parent -->
-                              {% assign pages2 = site.pages | sort:"url" %}
-                              <ul class="nav nav-list tree">
-                                {% for p2 in pages2 %}
-                                  {% if p2.parent == p1.title %}
-                                  <li><a {% if p.url == page.url %}class="active"{% endif %} href="{{p2.url}}">{{p2.title}}</a></li>
-                                  {% endif %}
-                                {% endfor %}
-                              </ul>
-                            </li>
+      <div class="col-sm-9">
+        {{ content }}
+      </div>
+
+      <div class="col-sm-3" style="padding-top : 4em;">
+        <div class="well">
+          <!-- We add a menu on the left -->
+          <!-- The menu will display all pages which have been given a variable 'parent' which
+               relates it somehow to the 'main' page. The menu follows the tree structure defined by
+               the pairs of variables 'title' and 'parent': a page appears as submenu of another one
+               iff its parent name is the same as the title of the first page. Pages with no parents
+               must be given the parent name 'main'. -->
+          <h3> Table of Contents </h3>
+          {% assign pages = site.pages | sort:"url"  %}
+          <!-- We put in the menu:
+                1. All pages of the first level 
+                2. All the pages that are in the same sub-section -->
+          <ul class="nav nav-pills nav-stacked">
+          {% for p in pages %}
+            {% if p.path == "index.md" %}
+              {% for x in p.children %}
+                  <!-- We identified an element of the menu -->
+                  <!-- let's find the corresponding file -->
+                  <!-- First we define a new variable with the full name of the file -->
+                  {% for p2 in pages %}
+                    {% if p2.path == {{x}} %}
+                      <!-- We found the corresponding page, it is p2 -->
+                      <!-- We can produce the corresponding menu element -->
+                      <li role="presentation" {% if p2.url == page.url %}class="active"{% endif %}><a href={{p2.url}}>{{p2.title}}</a></li>
+                      <!-- Now if the current page happens to be one of its children, we display all the children as well -->
+                      {% if p2.url == page.url %}
+                        {% assign inThisSubfolder = 1 %}
+                      {% else %}
+                        {% assign inThisSubfolder = 0 %}
+                      {% endif %}
+                      {% for z in p2.children %}
+                        <!-- We identified the pages corresponding to each of the children -->
+                        {% for p3 in pages %}
+                          {% if p3.path == {{z}} %}
+                            <!-- Now p3 is one of the children of p2, we check whether it corresponds to the current page -->
+                            {% if p3.url == page.url %}
+                              {% assign inThisSubfolder = 1 %}
+                            {% endif %}
                           {% endif %}
                         {% endfor %}
-                    </ul>
-                </div>
-        </div>
-
-        <div class="col-md-9">
-          {{ content }}
-        </div>
-    
-        <!-- Simpler, but unstructured menu
-        <div class="col-md-3">
-        <div class="nav">
-        {% assign pages = site.pages | sort:"url"  %}
-        <ul class="nav nav-pills nav-stacked">
-          {% for p in pages %}
-            <li>
-              <a {% if p.url == page.url %}class="active"{% endif %} href="{{ p.url }}">
-                {{ p.title }}
-              </a>
-            </li>
+                      {% endfor %}
+                      <!-- If we are in this folder, we display the second layer of the menu -->
+                      {% if inThisSubfolder == 1 %}
+                        <ul class="nav.nav nav-pills nav-stacked">
+                        {% for z in p2.children %}
+                          <!-- We identified the pages corresponding to each of the children -->
+                          {% for p3 in pages %}
+                            {% if p3.path == {{z}} %}
+                              <!-- Now p3 is one of the children of p2, we add it to the menu -->
+                              <li role="presentation" {% if p3.url == page.url %}class="active"{% endif %}><a href={{p3.url}}>{{p3.title}}</a></li>
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+              {% endfor %}
+            {% endif %}
           {% endfor %}
-        </ul>
+          </ul>
         </div>
-        </div> -->
+      </div>
+
+      <div class="col-sm-12">
+        <hr>
+        
+        <footer>
+          <p>
+            &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
+            <span class="pull-right text-muted">
+              powered by
+              <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
+              and <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap 3.0.3</a>
+            </span>
+          </p>
+        </footer>
+      </div>
     </div>
- 
-    <hr>
-    <footer>
-      <p>
-        &copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
-        <span class="pull-right text-muted">
-          powered by
-          <a href="http://dbtek.github.io/jekyll-bootstrap-3" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll-Bootstrap-3</a>
-          and <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap 3.0.3</a>
-        </span>
-      </p>
-    </footer>
- 
 
     {% include JB/analytics %}
     <script src="{{ ASSET_PATH }}/resources/jquery/jquery.min.js"></script>
     <script src="{{ ASSET_PATH }}/resources/bootstrap/js/bootstrap.min.js"></script>
   </body>
   
-  <!-- We need some scripts to deal with the menu -->
-  <script>
-    $(document).ready(function () {
-        $('label.tree-toggler').click(function () {
-            $(this).parent().children('ul.tree').toggle(300);
-        });
-    });
-  </script>
-
 </html>

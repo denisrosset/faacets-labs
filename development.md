@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Development process
-parent: main
 ---
 
 The source code and data files are hosted on Github in several

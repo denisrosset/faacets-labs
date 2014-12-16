@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Draft pages
-parent: main
+children:
+  - draft/folders.md
+  - draft/database.md
 ---
 
 Documents currently being updated:

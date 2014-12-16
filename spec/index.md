@@ -1,7 +1,15 @@
 ---
 layout: page
 title: Faacets file format (beta 2)
-parent: main
+children:
+  - spec/minimal.md
+  - spec/bounds.md
+  - spec/keywords.md
+  - spec/decomposition.md
+  - spec/transform.md
+  - spec/symmetries.md
+  - spec/metadata.md
+  - spec/canonical.md
 ---
 
 > **note**
