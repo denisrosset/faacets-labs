@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Welcome to Faacets's documentation!
+tagline: Supporting tagline
 ---
 
 Welcome to Faacets's documentation!
